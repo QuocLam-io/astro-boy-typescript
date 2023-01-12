@@ -5,8 +5,7 @@ import StartPage from "./components/StartPage";
 import WordDisplay from "./components/WordDisplay";
 import ProgressDisplay from "./components/ProgressDisplay";
 
-
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <StartPage />
@@ -16,6 +15,6 @@ function App() {
       <Keyboard />
     </div>
   );
-}
+};
 
 export default App;
