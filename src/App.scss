@@ -126,11 +126,39 @@ a {
   display: flex;
   flex-direction: column;
   height: 54%;
+  padding: 10.5% 8.5% 0 8.5%;
   background: linear-gradient(
     0deg,
-    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.2) 0%,
     rgba(255, 255, 255, 0) 100%
   );
+  gap: 2rem;
+  text-transform: uppercase;
+  // border: $border;
+
+  p {
+    line-height: 125%;
+    font-size: clamp(2.23vw, 32px, 2vw);
+  }
+
+  .word {
+    display: flex;
+    height: 34%;
+    gap: .5em;
+    // border: $border;
+
+    .letter-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 8%;
+      border: 2.06889px solid rgba(255, 255, 255, 0.5);
+
+      .letter {
+        font-size: clamp(2.23vw, 32px, 2vw);
+      }
+    }
+  }
 }
 
 //* -------------------------------- Keyboard -------------------------------- */
@@ -145,7 +173,6 @@ a {
   gap: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   // border: $border;
-
 
   .keyboard-row {
     display: flex;
