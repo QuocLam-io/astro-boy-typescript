@@ -35,7 +35,12 @@ const App: React.FC = () => {
 
   console.log("random word: ", randomWord);
 
-  
+  const addGuessedLetter = (letter: string) => {
+    if (guessedLetters.includes(letter)) return
+
+    setGuessedLetters([...guessedLetters, letter])
+  }
+
 
   useEffect(() => {
     const keyPressHandler = (e: KeyboardEvent) => {
