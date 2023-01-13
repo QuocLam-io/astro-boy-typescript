@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "./App.scss";
 import Navbar from "./components/Navbar";
 import Keyboard from "./components/Keyboard";
@@ -8,6 +9,9 @@ import axios from "axios";
 
 const App: React.FC = () => {
 
+  const [randomWord, setRandomWord] = useState<string>("");
+  
+
   const getRandomWord = async () => {
     const response = await axios
       .get(`https://api.api-ninjas.com/v1/randomword`, {
@@ -15,12 +19,14 @@ const App: React.FC = () => {
       })
       .then((res) => {
         console.log(res.data);
+        setRandomWord(res.data.word);
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
+  // getRandomWord();
 
   return (
     <div className="App">
