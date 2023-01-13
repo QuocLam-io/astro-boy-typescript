@@ -1,10 +1,10 @@
 import React from "react";
 
 type KeyboardProps = {
-  // setGuessedLetters: React.Dispatch<React.SetStateAction<string[]>>;
+  addGuessedLetter: (letter: string) => void;
 };
 
-const Keyboard = ({}: KeyboardProps) => {
+const Keyboard = ({ addGuessedLetter }: KeyboardProps) => {
   const topKeys: string[] = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"];
   const middleKeys: string[] = ["a", "s", "d", "f", "g", "h", "j", "k", "l"];
   const bottomKeys: string[] = ["z", "x", "c", "v", "b", "n", "m"];

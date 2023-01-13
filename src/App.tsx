@@ -78,7 +78,7 @@ const App: React.FC = () => {
             guessedLetters={guessedLetters}
           />
           <Keyboard 
-          
+          addGuessedLetter={addGuessedLetter}
           />
         </div>
         <ProgressDisplay />
