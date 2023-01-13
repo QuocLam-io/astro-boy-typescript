@@ -8,17 +8,19 @@ import axios from "axios";
 
 const App: React.FC = () => {
 
-  async function getRandomWord() {
-    try {
-        const response = await axios.get(``);
-        const data = response.data;
-        // const randomWord = 
-    } catch (error) {
+  const getRandomWord = async () => {
+    const response = await axios
+      .get(`https://api.api-ninjas.com/v1/randomword`, {
+        headers: { "X-Api-Key": "stcD1E9lKA6Fx395OTMigw==CFDom3PSmx2m5AAW" },
+      })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
         console.log(error);
-    }
-}
+      });
+  };
 
-getRandomWord();
 
   return (
     <div className="App">
