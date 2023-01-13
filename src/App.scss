@@ -43,9 +43,15 @@ video {
 //   }
 // }
 
-html {
+// html {
+//   background: url(./imgs/Background.png);
+//   background-size: cover;
+//   background-position: center;
+// }
+
+body {
   background: url(./imgs/Background.png);
-  background-size: cover;
+  background-size: 115%;
   background-position: center;
 }
 
@@ -120,12 +126,15 @@ a {
 
 //* ------------------------------ Word Display ------------------------------ */
 .WordDisplay {
-  height: 54vh;
+  display: flex;
+  flex-direction: column;
+  height: 54%;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 //* -------------------------------- Keyboard -------------------------------- */
 
 .Keyboard {
-  height: 64vh;
+  height: 46%;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
