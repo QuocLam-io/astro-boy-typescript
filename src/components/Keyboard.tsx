@@ -7,7 +7,21 @@ const Keyboard = ({}: KeyboardProps) => {
   const middleKeys: string[] = ["a", "s", "d", "f", "g", "h", "j", "k", "l"];
   const bottomKeys: string[] = ["z", "x", "c", "v", "b", "n", "m"];
 
-  return <div className="Keyboard">keyboard</div>;
+  const topRow = topKeys.map((letter) => <div className="key">{letter}</div>);
+  const middleRow = middleKeys.map((letter) => (
+    <div className="key">{letter}</div>
+  ));
+  const bottomRow = bottomKeys.map((letter) => (
+    <div className="key">{letter}</div>
+  ));
+
+  return (
+    <div className="Keyboard">
+      <div className="keyboard-row">{topRow}</div>
+      <div className="keyboard-row">{middleRow}</div>
+      <div className="keyboard-row">{bottomRow}</div>
+    </div>
+  );
 };
 
 export default Keyboard;

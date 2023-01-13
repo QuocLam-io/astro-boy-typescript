@@ -135,6 +135,30 @@ a {
 //* -------------------------------- Keyboard -------------------------------- */
 
 .Keyboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   height: 46%;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
+
+  .keyboard-row{
+    display: flex;
+  }
+
+  .key{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    aspect-ratio: 1/1.2;
+    font-size: clamp(1.4vw, 20px, 1.4vw);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+  }
 }
