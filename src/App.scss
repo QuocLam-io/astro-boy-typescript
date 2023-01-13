@@ -9,15 +9,12 @@ $noto: "Noto Sans", sans-serif;
   box-sizing: border-box;
 }
 
-html {
-  color-scheme: dark light;
-}
-
 * {
   margin: 0;
   padding: 0;
   font: inherit;
   font-family: $audiowide;
+  color: #ffffff;
 }
 
 body {
@@ -129,7 +126,11 @@ a {
   display: flex;
   flex-direction: column;
   height: 54%;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 //* -------------------------------- Keyboard -------------------------------- */
@@ -137,16 +138,26 @@ a {
 .Keyboard {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 46%;
+  padding: 2.5% 5%;
+  gap: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
+  // border: $border;
 
-  .keyboard-row{
+
+  .keyboard-row {
     display: flex;
+    justify-content: center;
+    // height: 22.5%;
+    height: 30%;
+    gap: 1rem;
+    text-transform: uppercase;
+    // border: $border;
   }
 
-  .key{
+  .key {
     display: flex;
     justify-content: center;
     align-items: center;
