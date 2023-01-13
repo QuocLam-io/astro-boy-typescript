@@ -32,9 +32,9 @@ const App: React.FC = () => {
     <div className="App">
       {/* <StartPage /> */}
       <Navbar />
-      <WordDisplay />
+      {/* <WordDisplay />
       <ProgressDisplay />
-      <Keyboard />
+      <Keyboard /> */}
     </div>
   );
 };
