@@ -33,7 +33,9 @@ const App: React.FC = () => {
       });
   };
 
-  console.log("random word: ", randomWord);
+  // console.log("random word: ", randomWord);
+  // console.log("guessed:", guessedLetters)
+  // console.log("wrong:", wrongLetters)
 
   const addGuessedLetter = (letter: string) => {
     if (guessedLetters.includes(letter)) return
