@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.scss";
 import Navbar from "./components/Navbar";
 import Keyboard from "./components/Keyboard";
@@ -35,6 +35,24 @@ const App: React.FC = () => {
 
   console.log("random word: ", randomWord);
 
+  
+
+  useEffect(() => {
+    const keyPressHandler = (e: KeyboardEvent) => {
+      const key = e.key;
+      if (!key.match(/^[a-z]$/)) return
+
+      e.preventDefault()
+      addGuessedLetter(key)
+    };
+
+    document.addEventListener("keypress", keyPressHandler);
+
+    return () => {
+      document.removeEventListener("keypress", keyPressHandler);
+    };
+  }, [guessedLetters]);
+
   return (
     <div className="App">
       {/* {startGame && <StartPage 
@@ -53,7 +71,7 @@ const App: React.FC = () => {
             guessedLetters={guessedLetters}
           />
           <Keyboard 
-          // setGuessedLetters={setGuessedLetters}
+          
           />
         </div>
         <ProgressDisplay />
