@@ -2,37 +2,10 @@ import React from "react";
 
 type WordDisplayProps = {
   randomWord: string;
+  guessedLetters: string[];
 };
 
-const WordDisplay = ({ randomWord }: WordDisplayProps) => {
-  const guessedLetters = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-  ];
+const WordDisplay = ({ randomWord, guessedLetters }: WordDisplayProps) => {
 
   return (
     <div className="WordDisplay">

@@ -13,7 +13,12 @@ const App: React.FC = () => {
   const [startGame, setStartGame] = useState<boolean>(true);
   const [howToPlay, setHowToPlay] = useState<boolean>(false);
 
-  const getRandomWord =  () => {
+  const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
+
+  const wrongLetters = guessedLetters.filter((letter)=> !randomWord.includes(letter))
+
+
+  const getRandomWord = () => {
     axios
       .get(`https://api.api-ninjas.com/v1/randomword`, {
         headers: { "X-Api-Key": "stcD1E9lKA6Fx395OTMigw==CFDom3PSmx2m5AAW" },
@@ -21,14 +26,14 @@ const App: React.FC = () => {
       .then((res) => {
         console.log(res.data);
         setRandomWord(res.data.word);
-        console.log("random word: ", randomWord)
+        console.log("random word: ", randomWord);
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
-  console.log("random word: ", randomWord)
+  console.log("random word: ", randomWord);
 
   return (
     <div className="App">
@@ -36,15 +41,20 @@ const App: React.FC = () => {
         getRandomWord={getRandomWord}
         setStartGame={setStartGame} getRandomWord={getRandomWord} />} */}
       {/* {howToPlay && <HowToPlay setHowToPlay={setHowToPlay} />} */}
-      <Navbar 
-      howToPlay={howToPlay} 
-      setHowToPlay={setHowToPlay}
-      getRandomWord={getRandomWord}
+      <Navbar
+        howToPlay={howToPlay}
+        setHowToPlay={setHowToPlay}
+        getRandomWord={getRandomWord}
       />
       <div className="display">
         <div className="left-display">
-          <WordDisplay randomWord={randomWord} />
-          <Keyboard />
+          <WordDisplay
+            randomWord={randomWord}
+            guessedLetters={guessedLetters}
+          />
+          <Keyboard 
+          // setGuessedLetters={setGuessedLetters}
+          />
         </div>
         <ProgressDisplay />
       </div>
