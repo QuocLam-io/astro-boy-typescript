@@ -1,9 +1,27 @@
-import React from 'react'
+import React from "react";
 
-const Navbar = () => {
+type NavbarProps = {
+  howToPlay: boolean;
+  setHowToPlay: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Navbar = ({ howToPlay, setHowToPlay }: NavbarProps) => {
   return (
-    <div className='Navbar' >Navbar</div>
-  )
-}
+    <div className="Navbar">
+      <div className="logo">
+        <div className="icon">🚀</div>
+        <p>ASTRO BOY</p>
+      </div>
+      <div
+        onClick={() => {
+          setHowToPlay(!howToPlay);
+        }}
+        className="how-to-play-btn"
+      >
+        How to Play
+      </div>
+    </div>
+  );
+};
 
-export default Navbar
+export default Navbar;

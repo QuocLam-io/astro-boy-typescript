@@ -1,8 +1,11 @@
 import React from 'react'
 
-const WordDisplay = () => {
+type WordDisplayProps = {
+}
+
+const WordDisplay = ({}:WordDisplayProps) => {
   return (
-    <div>WordDisplay</div>
+    <div className='WordDisplay' >WordDisplay</div>
   )
 }
 

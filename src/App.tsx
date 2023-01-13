@@ -5,12 +5,13 @@ import Keyboard from "./components/Keyboard";
 import StartPage from "./components/StartPage";
 import WordDisplay from "./components/WordDisplay";
 import ProgressDisplay from "./components/ProgressDisplay";
+import HowToPlay from "./components/HowToPlay";
 import axios from "axios";
 
 const App: React.FC = () => {
-
   const [randomWord, setRandomWord] = useState<string>("");
-  
+  const [startGame, setStartGame] = useState<boolean>(true);
+  const [howToPlay, setHowToPlay] = useState<boolean>(false);
 
   const getRandomWord = async () => {
     const response = await axios
@@ -26,15 +27,20 @@ const App: React.FC = () => {
       });
   };
 
-  // getRandomWord();
-
   return (
     <div className="App">
-      {/* <StartPage /> */}
-      <Navbar />
-      {/* <WordDisplay />
-      <ProgressDisplay />
-      <Keyboard /> */}
+      {/* {startGame && <StartPage 
+        getRandomWord={getRandomWord}
+        setStartGame={setStartGame} getRandomWord={getRandomWord} />} */}
+      {/* {howToPlay && <HowToPlay setHowToPlay={setHowToPlay} />} */}
+      <Navbar howToPlay={howToPlay} setHowToPlay={setHowToPlay} />
+      <div className="display">
+        <div className="left-display">
+          <WordDisplay randomWord={randomWord} />
+          <Keyboard />
+        </div>
+        <ProgressDisplay />
+      </div>
     </div>
   );
 };
