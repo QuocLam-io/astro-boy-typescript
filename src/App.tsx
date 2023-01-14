@@ -9,14 +9,17 @@ import HowToPlay from "./components/HowToPlay";
 import axios from "axios";
 
 const App: React.FC = () => {
+  //Random Word States
   const [randomWord, setRandomWord] = useState<string>("Violet");
+  const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
+  const correctLetters = guessedLetters.filter((letter)=> randomWord.includes(letter))
+  const incorrectLetters = guessedLetters.filter((letter)=> !randomWord.includes(letter))
+  
+  //Modal States
   const [startGame, setStartGame] = useState<boolean>(true);
   const [howToPlay, setHowToPlay] = useState<boolean>(false);
 
-  const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
-
-  const correctLetters = guessedLetters.filter((letter)=> randomWord.includes(letter))
-  const incorrectLetters = guessedLetters.filter((letter)=> !randomWord.includes(letter))
+  
 
 
   const getRandomWord = () => {
