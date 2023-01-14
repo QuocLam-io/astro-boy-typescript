@@ -10,19 +10,19 @@ const Keyboard = ({ addGuessedLetter }: KeyboardProps) => {
   const bottomKeys: string[] = ["z", "x", "c", "v", "b", "n", "m"];
 
   const topRow = topKeys.map((letter) => (
-    <div onClick={() => addGuessedLetter(letter)} className="key">
+    <button onClick={() => addGuessedLetter(letter)} className="key">
       {letter}
-    </div>
+    </button>
   ));
   const middleRow = middleKeys.map((letter) => (
-    <div onClick={() => addGuessedLetter(letter)} className="key">
+    <button onClick={() => addGuessedLetter(letter)} className="key">
       {letter}
-    </div>
+    </button>
   ));
   const bottomRow = bottomKeys.map((letter) => (
-    <div onClick={() => addGuessedLetter(letter)} className="key">
+    <button onClick={() => addGuessedLetter(letter)} className="key">
       {letter}
-    </div>
+    </button>
   ));
 
   return (

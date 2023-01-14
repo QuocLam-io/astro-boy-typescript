@@ -196,8 +196,9 @@ a {
     border: 1px solid rgba(255, 255, 255, 0.5);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    background: transparent;
 
-    &:hover {
+    &:hover:not(:disabled) {
       color: #0e0326;
       background: #ffffff;
       border: 1.5px solid rgba(255, 255, 255, 0.25);
