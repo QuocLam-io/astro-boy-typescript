@@ -51,6 +51,7 @@ const App: React.FC = () => {
 
   //Event Listeners for physical and virtual Keyboard
   const addGuessedLetter = useCallback(
+    //unables adding letter
     (letter: string) => {
       if (guessedLetters.includes(letter) || isLoser || isWinner) return;
 
