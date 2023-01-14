@@ -17,6 +17,9 @@ const Keyboard = ({
 
   const topRow = topKeys.map((letter) => (
     <button
+      disabled={
+        correctLetters.includes(letter) || incorrectLetters.includes(letter)
+      }
       onClick={() => addGuessedLetter(letter)}
       className={`key ${correctLetters.includes(letter) && "correct"} ${
         incorrectLetters.includes(letter) && "incorrect"
@@ -27,6 +30,9 @@ const Keyboard = ({
   ));
   const middleRow = middleKeys.map((letter) => (
     <button
+      disabled={
+        correctLetters.includes(letter) || incorrectLetters.includes(letter)
+      }
       onClick={() => addGuessedLetter(letter)}
       className={`key ${correctLetters.includes(letter) && "correct"} ${
         incorrectLetters.includes(letter) && "incorrect"
@@ -37,6 +43,9 @@ const Keyboard = ({
   ));
   const bottomRow = bottomKeys.map((letter) => (
     <button
+      disabled={
+        correctLetters.includes(letter) || incorrectLetters.includes(letter)
+      }
       onClick={() => addGuessedLetter(letter)}
       className={`key ${correctLetters.includes(letter) && "correct"} ${
         incorrectLetters.includes(letter) && "incorrect"

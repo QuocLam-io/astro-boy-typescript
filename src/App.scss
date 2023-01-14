@@ -192,6 +192,7 @@ a {
     align-items: center;
     height: 100%;
     width: 5.97%;
+    text-transform: uppercase;
     font-size: clamp(1.4vw, 20px, 1.4vw);
     border: 1px solid rgba(255, 255, 255, 0.5);
     cursor: pointer;
@@ -200,25 +201,29 @@ a {
 
     &:hover:not(:disabled) {
       color: #0e0326;
-      background: #ffffff;
-      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      background: linear-gradient(
+          0deg,
+          rgba(14, 3, 38, 0.25),
+          rgba(14, 3, 38, 0.25)
+        ),
+        #ffffff;
+      border: 3px solid rgba(14, 3, 38, 0.25);
     }
+
+
   }
 
   .correct {
     color: #0e0326;
-    background: linear-gradient(
-        0deg,
-        rgba(14, 3, 38, 0.25),
-        rgba(14, 3, 38, 0.25)
-      ),
-      #ffffff;
-    border: 3px solid rgba(14, 3, 38, 0.25);
+    background: #ffffff;
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    cursor: auto;
   }
 
   .incorrect {
     color: rgba(255, 255, 255, 0.5);
     background: rgba(255, 255, 255, 0.5);
     border: 1.5px solid rgba(255, 255, 255, 0.25);
+    cursor: auto;
   }
 }
