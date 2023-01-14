@@ -143,6 +143,7 @@ a {
 
   .word {
     display: flex;
+    justify-content: center;
     height: 34%;
     gap: .5em;
     // border: $border;
@@ -190,7 +191,6 @@ a {
     justify-content: center;
     align-items: center;
     height: 100%;
-    // aspect-ratio: 1/1.2;
     width: 5.97%;
     font-size: clamp(1.4vw, 20px, 1.4vw);
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -200,5 +200,6 @@ a {
     &:hover {
       background: rgba(255, 255, 255, 0.25);
     }
+    
   }
 }

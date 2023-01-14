@@ -9,7 +9,7 @@ import HowToPlay from "./components/HowToPlay";
 import axios from "axios";
 
 const App: React.FC = () => {
-  const [randomWord, setRandomWord] = useState<string>("");
+  const [randomWord, setRandomWord] = useState<string>("Violet");
   const [startGame, setStartGame] = useState<boolean>(true);
   const [howToPlay, setHowToPlay] = useState<boolean>(false);
 
