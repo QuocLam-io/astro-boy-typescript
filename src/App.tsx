@@ -25,7 +25,7 @@ const App: React.FC = () => {
       })
       .then((res) => {
         console.log(res.data);
-        setRandomWord(res.data.word);
+        setRandomWord(res.data.word.tolowerCase());
         console.log("random word: ", randomWord);
       })
       .catch((error) => {
