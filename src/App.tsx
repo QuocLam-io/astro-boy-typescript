@@ -14,14 +14,12 @@ const App: React.FC = () => {
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   const correctLetters = guessedLetters.filter((letter)=> randomWord.includes(letter))
   const incorrectLetters = guessedLetters.filter((letter)=> !randomWord.includes(letter))
-  
+
   //Modal States
   const [startGame, setStartGame] = useState<boolean>(true);
   const [howToPlay, setHowToPlay] = useState<boolean>(false);
 
-  
-
-
+  //Calls API for a random word
   const getRandomWord = () => {
     axios
       .get(`https://api.api-ninjas.com/v1/randomword`, {
@@ -41,13 +39,13 @@ const App: React.FC = () => {
   // console.log("guessed:", guessedLetters)
   // console.log("wrong:", wrongLetters)
 
+  //Event Listeners for physical and virtual Keyboard
   const addGuessedLetter = useCallback( 
     (letter: string) => {
     if (guessedLetters.includes(letter)) return
 
     setGuessedLetters([...guessedLetters, letter])
   }, [guessedLetters])
-
 
   useEffect(() => {
     const keyPressHandler = (e: KeyboardEvent) => {
@@ -64,6 +62,13 @@ const App: React.FC = () => {
       document.removeEventListener("keypress", keyPressHandler);
     };
   }, [guessedLetters]);
+
+  //Todo ----------------------------- Win Lose Logic ----------------------------- */
+
+  const isLoser = incorrectLetters.length >= 6
+  const isWinner = randomWord.split("").every((letter) => correctLetters.includes(letter))
+
+  /* -------------------------------------------------------------------------- */
 
   return (
     <div className="App">
