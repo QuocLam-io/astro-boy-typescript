@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./App.scss";
 import Navbar from "./components/Navbar";
 import Keyboard from "./components/Keyboard";
@@ -15,7 +15,8 @@ const App: React.FC = () => {
 
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
 
-  const wrongLetters = guessedLetters.filter((letter)=> !randomWord.includes(letter))
+  const correctLetters = guessedLetters.filter((letter)=> randomWord.includes(letter))
+  const incorrectLetters = guessedLetters.filter((letter)=> !randomWord.includes(letter))
 
 
   const getRandomWord = () => {
@@ -37,11 +38,12 @@ const App: React.FC = () => {
   // console.log("guessed:", guessedLetters)
   // console.log("wrong:", wrongLetters)
 
-  const addGuessedLetter = (letter: string) => {
+  const addGuessedLetter = useCallback( 
+    (letter: string) => {
     if (guessedLetters.includes(letter)) return
 
     setGuessedLetters([...guessedLetters, letter])
-  }
+  }, [guessedLetters])
 
 
   useEffect(() => {
@@ -78,6 +80,8 @@ const App: React.FC = () => {
             guessedLetters={guessedLetters}
           />
           <Keyboard 
+          correctLetters={correctLetters}
+          incorrectLetters={incorrectLetters}
           addGuessedLetter={addGuessedLetter}
           />
         </div>
