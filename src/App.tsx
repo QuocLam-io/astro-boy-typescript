@@ -12,12 +12,22 @@ const App: React.FC = () => {
   //Random Word States
   const [randomWord, setRandomWord] = useState<string>("Violet");
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
-  const correctLetters = guessedLetters.filter((letter)=> randomWord.includes(letter))
-  const incorrectLetters = guessedLetters.filter((letter)=> !randomWord.includes(letter))
+  const correctLetters = guessedLetters.filter((letter) =>
+    randomWord.includes(letter)
+  );
+  const incorrectLetters = guessedLetters.filter(
+    (letter) => !randomWord.includes(letter)
+  );
 
   //Modal States
   const [startGame, setStartGame] = useState<boolean>(true);
   const [howToPlay, setHowToPlay] = useState<boolean>(false);
+
+  //Win Lose Logic
+  const isLoser = incorrectLetters.length >= 6;
+  const isWinner = randomWord
+    .split("")
+    .every((letter) => correctLetters.includes(letter));
 
   //Calls API for a random word
   const getRandomWord = () => {
@@ -40,20 +50,22 @@ const App: React.FC = () => {
   // console.log("wrong:", wrongLetters)
 
   //Event Listeners for physical and virtual Keyboard
-  const addGuessedLetter = useCallback( 
+  const addGuessedLetter = useCallback(
     (letter: string) => {
-    if (guessedLetters.includes(letter)) return
+      if (guessedLetters.includes(letter) || isLoser || isWinner) return;
 
-    setGuessedLetters([...guessedLetters, letter])
-  }, [guessedLetters])
+      setGuessedLetters([...guessedLetters, letter]);
+    },
+    [guessedLetters]
+  );
 
   useEffect(() => {
     const keyPressHandler = (e: KeyboardEvent) => {
       const key = e.key;
-      if (!key.match(/^[a-z]$/)) return
+      if (!key.match(/^[a-z]$/)) return;
 
-      e.preventDefault()
-      addGuessedLetter(key)
+      e.preventDefault();
+      addGuessedLetter(key);
     };
 
     document.addEventListener("keypress", keyPressHandler);
@@ -62,11 +74,6 @@ const App: React.FC = () => {
       document.removeEventListener("keypress", keyPressHandler);
     };
   }, [guessedLetters]);
-
-  //Todo ----------------------------- Win Lose Logic ----------------------------- */
-
-  const isLoser = incorrectLetters.length >= 6
-  const isWinner = randomWord.split("").every((letter) => correctLetters.includes(letter))
 
   /* -------------------------------------------------------------------------- */
 
@@ -87,10 +94,11 @@ const App: React.FC = () => {
             randomWord={randomWord}
             guessedLetters={guessedLetters}
           />
-          <Keyboard 
-          correctLetters={correctLetters}
-          incorrectLetters={incorrectLetters}
-          addGuessedLetter={addGuessedLetter}
+          <Keyboard
+            disabled={isLoser || isWinner}
+            correctLetters={correctLetters}
+            incorrectLetters={incorrectLetters}
+            addGuessedLetter={addGuessedLetter}
           />
         </div>
         <ProgressDisplay />

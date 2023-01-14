@@ -4,9 +4,11 @@ type KeyboardProps = {
   addGuessedLetter: (letter: string) => void;
   correctLetters: string[];
   incorrectLetters: string[];
+  disabled?: boolean;
 };
 
 const Keyboard = ({
+  disabled = false,
   addGuessedLetter,
   correctLetters,
   incorrectLetters,
@@ -18,7 +20,7 @@ const Keyboard = ({
   const topRow = topKeys.map((letter) => (
     <button
       disabled={
-        correctLetters.includes(letter) || incorrectLetters.includes(letter)
+        correctLetters.includes(letter) || incorrectLetters.includes(letter) || disabled
       }
       onClick={() => addGuessedLetter(letter)}
       className={`key ${correctLetters.includes(letter) && "correct"} ${
@@ -31,7 +33,7 @@ const Keyboard = ({
   const middleRow = middleKeys.map((letter) => (
     <button
       disabled={
-        correctLetters.includes(letter) || incorrectLetters.includes(letter)
+        correctLetters.includes(letter) || incorrectLetters.includes(letter) || disabled
       }
       onClick={() => addGuessedLetter(letter)}
       className={`key ${correctLetters.includes(letter) && "correct"} ${
@@ -44,7 +46,7 @@ const Keyboard = ({
   const bottomRow = bottomKeys.map((letter) => (
     <button
       disabled={
-        correctLetters.includes(letter) || incorrectLetters.includes(letter)
+        correctLetters.includes(letter) || incorrectLetters.includes(letter) || disabled
       }
       onClick={() => addGuessedLetter(letter)}
       className={`key ${correctLetters.includes(letter) && "correct"} ${
