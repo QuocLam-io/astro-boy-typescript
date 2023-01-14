@@ -57,7 +57,7 @@ const App: React.FC = () => {
 
       setGuessedLetters([...guessedLetters, letter]);
     },
-    [guessedLetters]
+    [guessedLetters, isLoser, isWinner]
   );
 
   useEffect(() => {
