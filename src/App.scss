@@ -145,7 +145,7 @@ a {
     display: flex;
     justify-content: center;
     height: 34%;
-    gap: .5em;
+    gap: 0.5em;
     // border: $border;
 
     .letter-box {
@@ -198,8 +198,26 @@ a {
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.25);
+      color: #0e0326;
+      background: #ffffff;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
     }
-    
+  }
+
+  .correct {
+    color: #0e0326;
+    background: linear-gradient(
+        0deg,
+        rgba(14, 3, 38, 0.25),
+        rgba(14, 3, 38, 0.25)
+      ),
+      #ffffff;
+    border: 3px solid rgba(14, 3, 38, 0.25);
+  }
+
+  .incorrect {
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
   }
 }
