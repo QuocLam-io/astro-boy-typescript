@@ -5,9 +5,11 @@ type ProgressDisplayProps = {
 }
 
 const ProgressDisplay = ({incorrectGuesses}: ProgressDisplayProps) => {
-  
+
   return (
-    <div>ProgressDisplay</div>
+    <div>
+      <img src={`/public/imgs/fail${incorrectGuesses}.svg`} alt="" srcset="" />
+    </div>
   )
 }
 
