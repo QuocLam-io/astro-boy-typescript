@@ -102,7 +102,9 @@ const App: React.FC = () => {
             addGuessedLetter={addGuessedLetter}
           />
         </div>
-        <ProgressDisplay />
+        <ProgressDisplay
+          incorrectGuesses={incorrectLetters.length}
+        />
       </div>
     </div>
   );

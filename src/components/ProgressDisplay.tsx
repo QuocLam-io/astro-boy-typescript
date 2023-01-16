@@ -1,6 +1,11 @@
 import React from 'react'
 
-const ProgressDisplay = () => {
+type ProgressDisplayProps = {
+  incorrectGuesses: number
+}
+
+const ProgressDisplay = ({incorrectGuesses}: ProgressDisplayProps) => {
+  
   return (
     <div>ProgressDisplay</div>
   )
