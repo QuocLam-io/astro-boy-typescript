@@ -19,18 +19,7 @@ const ProgressDisplay = ({
       {!isLoser && !isWinner && (
         <div
           className="rocket-progress"
-          {...(!isLoser &&
-            !isWinner && {
-              style: {
-                backgroundImage: `url(/imgs/fail${incorrectGuesses}.svg)`,
-              },
-            })}
-          // {...(isWinner && {
-          //   style: { backgroundImage: `url(/imgs/failWin.gif)` },
-          // })}
-          // {...(isLoser && {
-          //   style: { backgroundImage: `url(/imgs/failLose.gif)` },
-          // })}
+          style={{ backgroundImage: `url(/imgs/fail${incorrectGuesses}.svg)` }}
         ></div>
       )}
       {/* <img src={`/public/imgs/fail${incorrectGuesses}.svg`} alt="Rocket" /> */}
