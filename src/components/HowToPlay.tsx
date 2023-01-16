@@ -1,8 +1,19 @@
 import React from 'react'
+import {motion} from 'framer-motion'
 
-const HowToPlay = () => {
+interface HowToPlayProps {
+  setHowToPlay: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const HowToPlay = ({setHowToPlay}:HowToPlayProps) => {
   return (
-    <div>HowToPlay</div>
+    <motion.div className='HowToPlay'
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}
+    >
+
+    </motion.div>
   )
 }
 

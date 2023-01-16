@@ -83,7 +83,7 @@ const App: React.FC = () => {
       {/* {startGame && <StartPage 
         getRandomWord={getRandomWord}
         setStartGame={setStartGame} getRandomWord={getRandomWord} />} */}
-      {/* {howToPlay && <HowToPlay setHowToPlay={setHowToPlay} />} */}
+      {howToPlay && <HowToPlay setHowToPlay={setHowToPlay} />}
       <Navbar
         howToPlay={howToPlay}
         setHowToPlay={setHowToPlay}

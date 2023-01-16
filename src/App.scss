@@ -307,3 +307,18 @@ a {
     background-repeat: no-repeat;
   }
 }
+
+//* ------------------------------- How To Play ------------------------------ */
+
+.HowToPlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(51, 51, 51, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
