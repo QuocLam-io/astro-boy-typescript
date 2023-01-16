@@ -116,7 +116,7 @@ a {
   .left-display {
     display: flex;
     flex-direction: column;
-    width: 75vw;
+    width: 75%;
     border-right: 1px solid rgba(255, 255, 255, 0.5);
   }
 }
@@ -228,5 +228,18 @@ a {
     background: rgba(255, 255, 255, 0.5);
     border: 1.5px solid rgba(255, 255, 255, 0.25);
     cursor: auto;
+  }
+}
+
+//* ---------------------------- Progress Display ---------------------------- */
+
+.ProgressDisplay{
+  display: flex;
+  width:  25%;
+  flex-direction: column;
+
+  .counter-displays{
+    height: 22.5%;
+    border: $border;
   }
 }

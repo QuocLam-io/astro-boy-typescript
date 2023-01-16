@@ -7,8 +7,9 @@ type ProgressDisplayProps = {
 const ProgressDisplay = ({incorrectGuesses}: ProgressDisplayProps) => {
 
   return (
-    <div>
-      <img src={`/public/imgs/fail${incorrectGuesses}.svg`} alt="" srcset="" />
+    <div className='ProgressDisplay' >
+      <div className="counter-displays"></div>
+      <img src={`/public/imgs/fail${incorrectGuesses}.svg`} alt="Rocket" />
     </div>
   )
 }
