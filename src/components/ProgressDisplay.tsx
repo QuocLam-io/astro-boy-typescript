@@ -13,7 +13,18 @@ const ProgressDisplay = ({
 }: ProgressDisplayProps) => {
   return (
     <div className="ProgressDisplay">
-      <div className="counter-displays"></div>
+      <div className="counter-displays">
+        <div className="time-left">
+          <p>Time Left</p>
+          <div className="countdonw"></div>
+        </div>
+        <div className="errors">
+          <p>Errors</p>
+          <div className="countdown" >
+            
+            {incorrectGuesses}/6</div>
+        </div>
+      </div>
       {isWinner && <div className="winner"></div>}
       {isLoser && <div className="loser"></div>}
       {!isLoser && !isWinner && (
@@ -22,7 +33,6 @@ const ProgressDisplay = ({
           style={{ backgroundImage: `url(/imgs/fail${incorrectGuesses}.svg)` }}
         ></div>
       )}
-      {/* <img src={`/public/imgs/fail${incorrectGuesses}.svg`} alt="Rocket" /> */}
     </div>
   );
 };

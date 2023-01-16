@@ -10,7 +10,7 @@ import axios from "axios";
 
 const App: React.FC = () => {
   //Random Word States
-  const [randomWord, setRandomWord] = useState<string>("violet");
+  const [randomWord, setRandomWord] = useState<string>("meowmeow");
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   const correctLetters = guessedLetters.filter((letter) =>
     randomWord.includes(letter)
