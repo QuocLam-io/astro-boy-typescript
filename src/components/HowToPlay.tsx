@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+//Todo: HowToPlay close transition
+
 interface HowToPlayProps {
   setHowToPlay: React.Dispatch<React.SetStateAction<boolean>>;
   howToPlay: boolean;
