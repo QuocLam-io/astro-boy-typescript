@@ -1,17 +1,22 @@
-import React from 'react'
+import React from "react";
 
 type ProgressDisplayProps = {
-  incorrectGuesses: number
-}
+  incorrectGuesses: number;
+};
 
-const ProgressDisplay = ({incorrectGuesses}: ProgressDisplayProps) => {
-
+const ProgressDisplay = ({ incorrectGuesses }: ProgressDisplayProps) => {
   return (
-    <div className='ProgressDisplay' >
+    <div className="ProgressDisplay">
       <div className="counter-displays"></div>
-      <img src={`/public/imgs/fail${incorrectGuesses}.svg`} alt="Rocket" />
+      <div
+        className="rocket-display"
+        style={{
+          backgroundImage: `url(/public/imgs/fail${incorrectGuesses}.svg)`,
+        }}
+      ></div>
+      {/* <img src={`/public/imgs/fail${incorrectGuesses}.svg`} alt="Rocket" /> */}
     </div>
-  )
-}
+  );
+};
 
-export default ProgressDisplay
+export default ProgressDisplay;
