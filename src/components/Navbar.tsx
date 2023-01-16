@@ -13,13 +13,13 @@ const Navbar = ({ howToPlay, setHowToPlay, getRandomWord }: NavbarProps) => {
         <div className="icon">🚀</div>
         <p>ASTRO BOY</p>
       </div>
-      <button
+      {/* <button
         onClick={() => {
           getRandomWord();
         }}
       >
         Get Random Word
-      </button>
+      </button> */}
       <div
         onClick={() => {
           setHowToPlay(!howToPlay);

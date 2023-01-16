@@ -104,6 +104,8 @@ const App: React.FC = () => {
         </div>
         <ProgressDisplay
           incorrectGuesses={incorrectLetters.length}
+          isLoser={isLoser}
+          isWinner={isWinner}
         />
       </div>
     </div>

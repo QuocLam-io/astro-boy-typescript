@@ -2,9 +2,15 @@ import React from "react";
 
 type ProgressDisplayProps = {
   incorrectGuesses: number;
+  isLoser: boolean;
+  isWinner: boolean;
 };
 
-const ProgressDisplay = ({ incorrectGuesses }: ProgressDisplayProps) => {
+const ProgressDisplay = ({
+  incorrectGuesses,
+  isLoser,
+  isWinner,
+}: ProgressDisplayProps) => {
   return (
     <div className="ProgressDisplay">
       <div className="counter-displays"></div>
