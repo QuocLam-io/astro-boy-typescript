@@ -64,7 +64,7 @@ a {
   color: inherit;
 }
 
-//* ------------------------------- Start PAge ------------------------------- */
+//* ------------------------------- Start Page ------------------------------- */
 
 .StartPage {
   display: flex;
@@ -74,8 +74,12 @@ a {
   position: absolute;
   top: 0;
   left: 0;
+  background: url(./imgs/Background.png);
+  background-size: 115%;
+  background-position: center;
   // z-index: 3;
-  border: $border;
+  // border: $border;
+  transition: all 0.2s ease-in-out;
 }
 
 //* --------------------------------- Navbar --------------------------------- */
