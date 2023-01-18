@@ -11,6 +11,11 @@ const ProgressDisplay = ({
   isLoser,
   isWinner,
 }: ProgressDisplayProps) => {
+  const newGameText: string[] = [
+    "WAY TO GO SPACE COWBOY",
+    "WELCOME TO THE COLD EMPTINESS OF SPACE",
+  ];
+
   return (
     <div className="ProgressDisplay">
       <div className="counter-displays">
@@ -25,11 +30,14 @@ const ProgressDisplay = ({
       </div>
       {isWinner && (
         <div className="winner rocket">
+          <p>{newGameText[0]}</p>
           <div className="new-game">NEW GAME</div>
         </div>
       )}
       {isLoser && (
         <div className="loser rocket">
+          <p>{newGameText[1]}</p>
+
           <div className="new-game">NEW GAME</div>
         </div>
       )}
@@ -37,8 +45,7 @@ const ProgressDisplay = ({
         <div
           className="rocket-progress rocket"
           style={{ backgroundImage: `url(/imgs/fail${incorrectGuesses}.svg)` }}
-        >
-        </div>
+        ></div>
       )}
     </div>
   );
