@@ -20,18 +20,25 @@ const ProgressDisplay = ({
         </div>
         <div className="errors">
           <p>Errors</p>
-          <div className="countdown" >
-            
-            {incorrectGuesses}/6</div>
+          <div className="countdown">{incorrectGuesses}/6</div>
         </div>
       </div>
-      {isWinner && <div className="winner"></div>}
-      {isLoser && <div className="loser"></div>}
+      {isWinner && (
+        <div className="winner rocket">
+          <div className="new-game">NEW GAME</div>
+        </div>
+      )}
+      {isLoser && (
+        <div className="loser rocket">
+          <div className="new-game">NEW GAME</div>
+        </div>
+      )}
       {!isLoser && !isWinner && (
         <div
-          className="rocket-progress"
+          className="rocket-progress rocket"
           style={{ backgroundImage: `url(/imgs/fail${incorrectGuesses}.svg)` }}
-        ></div>
+        >
+        </div>
       )}
     </div>
   );
