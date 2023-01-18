@@ -37,7 +37,8 @@ const App: React.FC = () => {
       })
       .then((res) => {
         console.log(res.data);
-        setRandomWord(res.data.word.tolowerCase());
+        let response = res.data.word
+        setRandomWord(response.toLowerCase());
         console.log("random word: ", randomWord);
       })
       .catch((error) => {
@@ -106,6 +107,9 @@ const App: React.FC = () => {
           incorrectGuesses={incorrectLetters.length}
           isLoser={isLoser}
           isWinner={isWinner}
+          getRandomWord={getRandomWord}
+          setRandomWord={setRandomWord}
+          randomWord={randomWord}
         />
       </div>
     </div>

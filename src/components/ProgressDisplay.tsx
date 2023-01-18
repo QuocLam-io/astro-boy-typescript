@@ -1,15 +1,21 @@
 import React from "react";
+import axios from "axios";
 
 type ProgressDisplayProps = {
   incorrectGuesses: number;
   isLoser: boolean;
   isWinner: boolean;
+  getRandomWord: () => void;
+
+  randomWord: string;
 };
 
 const ProgressDisplay = ({
   incorrectGuesses,
   isLoser,
   isWinner,
+  getRandomWord,
+  randomWord,
 }: ProgressDisplayProps) => {
   const newGameText: string[] = [
     "WAY TO GO SPACE COWBOY",
@@ -31,14 +37,28 @@ const ProgressDisplay = ({
       {isWinner && (
         <div className="winner rocket">
           <p>{newGameText[0]}</p>
-          <div className="new-game">NEW GAME</div>
+          <div
+            onClick={() => {
+              getRandomWord();
+            }}
+            className="new-game"
+          >
+            NEW GAME
+          </div>
         </div>
       )}
       {isLoser && (
         <div className="loser rocket">
           <p>{newGameText[1]}</p>
 
-          <div className="new-game lose">NEW GAME</div>
+          <div
+            onClick={() => {
+              getRandomWord();
+            }}
+            className="new-game lose"
+          >
+            NEW GAME
+          </div>
         </div>
       )}
       {!isLoser && !isWinner && (
