@@ -83,9 +83,9 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      {/* {startGame && <StartPage 
+      {startGame && <StartPage 
         getRandomWord={getRandomWord}
-        setStartGame={setStartGame} />} */}
+        setStartGame={setStartGame} />}
       {howToPlay && <HowToPlay howToPlay={howToPlay} setHowToPlay={setHowToPlay} />}
       <Navbar
         howToPlay={howToPlay}

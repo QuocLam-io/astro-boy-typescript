@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const StartPage = () => {
-  return (
-    <div>StartPage</div>
-  )
+interface StartPageProps {
+  getRandomWord: () => void;
 }
 
-export default StartPage
+const StartPage: React.FC<StartPageProps> = ({ getRandomWord }) => {
+  return <div>StartPage</div>;
+};
+
+export default StartPage;
