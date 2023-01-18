@@ -108,8 +108,8 @@ const App: React.FC = () => {
           isLoser={isLoser}
           isWinner={isWinner}
           getRandomWord={getRandomWord}
-          setRandomWord={setRandomWord}
           randomWord={randomWord}
+          setGuessedLetters={setGuessedLetters}
         />
       </div>
     </div>

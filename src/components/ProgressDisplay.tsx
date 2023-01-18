@@ -6,8 +6,8 @@ type ProgressDisplayProps = {
   isLoser: boolean;
   isWinner: boolean;
   getRandomWord: () => void;
-
   randomWord: string;
+  setGuessedLetters: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
 const ProgressDisplay = ({
@@ -16,6 +16,7 @@ const ProgressDisplay = ({
   isWinner,
   getRandomWord,
   randomWord,
+  setGuessedLetters,
 }: ProgressDisplayProps) => {
   const newGameText: string[] = [
     "WAY TO GO SPACE COWBOY",
@@ -40,6 +41,7 @@ const ProgressDisplay = ({
           <div
             onClick={() => {
               getRandomWord();
+              setGuessedLetters([]);
             }}
             className="new-game"
           >
@@ -54,6 +56,7 @@ const ProgressDisplay = ({
           <div
             onClick={() => {
               getRandomWord();
+              setGuessedLetters([]);
             }}
             className="new-game lose"
           >
