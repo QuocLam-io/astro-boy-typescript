@@ -64,6 +64,20 @@ a {
   color: inherit;
 }
 
+//* ------------------------------- Start PAge ------------------------------- */
+
+.StartPage {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  // z-index: 3;
+  border: $border;
+}
+
 //* --------------------------------- Navbar --------------------------------- */
 
 .Navbar {
