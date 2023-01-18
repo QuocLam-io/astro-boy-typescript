@@ -28,7 +28,7 @@ const ProgressDisplay = ({
       <div className="counter-displays">
         <div className="time-left">
           <p>Time Left</p>
-          <div className="countdonw"></div>
+          <div className="countdown"></div>
         </div>
         <div className="errors">
           <p>Errors</p>
@@ -45,7 +45,7 @@ const ProgressDisplay = ({
             }}
             className="new-game"
           >
-            NEW GAME
+            NEW MISSION
           </div>
         </div>
       )}
@@ -60,7 +60,7 @@ const ProgressDisplay = ({
             }}
             className="new-game lose"
           >
-            NEW GAME
+            NEW MISSION
           </div>
         </div>
       )}

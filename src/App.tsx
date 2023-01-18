@@ -77,6 +77,8 @@ const App: React.FC = () => {
     };
   }, [guessedLetters]);
 
+  let audio = new Audio("./audio/the_color_violet.mp3");
+
   /* -------------------------------------------------------------------------- */
 
   return (
@@ -89,6 +91,7 @@ const App: React.FC = () => {
         howToPlay={howToPlay}
         setHowToPlay={setHowToPlay}
         getRandomWord={getRandomWord}
+        audio={audio}
       />
       <div className="display">
         <div className="left-display">
