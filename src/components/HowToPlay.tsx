@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-
 interface HowToPlayProps {
   setHowToPlay: React.Dispatch<React.SetStateAction<boolean>>;
   howToPlay: boolean;
@@ -10,16 +9,16 @@ interface HowToPlayProps {
 const HowToPlay = ({ setHowToPlay, howToPlay }: HowToPlayProps) => {
   return (
     <motion.div
-    className="HowToPlay"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
+      className="HowToPlay"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
     >
       <div id="instructions">
         <div className="instructions-header">
-          <h2>HOW TO PLAY</h2>
+          <h1>HOW TO PLAY</h1>
           <img
-      //!TODO: HowToPlay close transition
+            //!TODO: HowToPlay close transition
             onClick={() => {
               setHowToPlay(!howToPlay);
             }}
@@ -27,9 +26,15 @@ const HowToPlay = ({ setHowToPlay, howToPlay }: HowToPlayProps) => {
             alt="close button"
           />
         </div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non omnis amet
-        beatae repellat nostrum voluptatibus nemo ut vel natus porro odio quam,
-        voluptates delectus dolore excepturi at provident facere fuga.
+        <div className="instructions-body">
+          <p>ASTRO BOY is a 1 player Word-Guessing game.</p>
+          <p>How to Play:</p>
+          <p>
+           You will have 6 attempts or until the music stops playing to guess the randomly generated word.
+            </p>
+            <img src="/imgs/how-to-play.svg" alt="" />
+            <p>GOOD LUCK.</p>
+        </div>
       </div>
     </motion.div>
   );

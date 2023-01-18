@@ -332,10 +332,52 @@ a {
 
     .instructions-header {
       display: flex;
+      justify-content: space-between;
+      height: 16%;
+      padding: 6%;
+      // border: $border;
 
-      // .h2 {
-      //   color: #0e0326;
-      // }
+      h1 {
+        font-size: clamp(24px, 1.5vw, 2vw);
+        letter-spacing: 0.1em;
+        line-height: 125%;
+      }
+      img {
+        height: 1.5vw;
+        cursor: pointer;
+        // border: $border;
+      }
+    }
+
+    .instructions-body {
+      display: flex;
+      flex-direction: column;
+      font-family: $noto;
+      padding: 3.6% 6%;
+      // border: $border;
+
+      > * {
+        font-size: clamp(18px, 1.1vw, 1.1vw);
+        line-height: 125%;
+        color: #0e0326;
+        // margin-bottom: 1rem;
+        margin-bottom: 5%;
+      }
+
+      :nth-child(2) {
+        // margin-bottom: .2rem;
+        margin-bottom: 1%;
+      }
+      :nth-child(3) {
+        // margin-bottom: .2rem;
+        margin-bottom: 2%;
+      }
+
+      :nth-last-child(1) {
+        font-family: $gugi;
+        font-size: clamp(1vw, 20px, 2vw);
+        letter-spacing: 0.1em;
+      }
     }
   }
 }
