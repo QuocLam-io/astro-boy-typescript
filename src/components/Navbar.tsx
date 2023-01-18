@@ -4,14 +4,13 @@ type NavbarProps = {
   howToPlay: boolean;
   setHowToPlay: React.Dispatch<React.SetStateAction<boolean>>;
   getRandomWord: () => void;
-  audio: HTMLAudioElement;
+  
 };
 
 const Navbar = ({
   howToPlay,
   setHowToPlay,
   getRandomWord,
-  audio,
 }: NavbarProps) => {
   return (
     <div className="Navbar">
@@ -23,7 +22,6 @@ const Navbar = ({
       <div
         onClick={() => {
           setHowToPlay(!howToPlay);
-          audio.play();
         }}
         className="how-to-play-btn"
       >
