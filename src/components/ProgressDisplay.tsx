@@ -38,7 +38,7 @@ const ProgressDisplay = ({
         <div className="loser rocket">
           <p>{newGameText[1]}</p>
 
-          <div className="new-game">NEW GAME</div>
+          <div className="new-game lose">NEW GAME</div>
         </div>
       )}
       {!isLoser && !isWinner && (

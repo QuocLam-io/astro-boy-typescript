@@ -289,7 +289,7 @@ a {
     padding: 7.5%;
     background-position: center;
     background-repeat: no-repeat;
-    p{
+    p {
       text-align: center;
       font-size: clamp(2vw, 24px, 2vw);
     }
@@ -327,6 +327,12 @@ a {
     &:hover {
       background: rgba(14, 3, 38, 0.5);
     }
+  }
+
+  .lose {
+    color: white;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
   }
 }
 
