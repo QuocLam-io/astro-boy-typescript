@@ -22,9 +22,12 @@ const WordDisplay = ({
               <span
                 className="letter"
                 style={{
-                  visibility: guessedLetters.includes(letter) || revealWord
-                    ? "visible"
-                    : "hidden",
+                  visibility:
+                    guessedLetters.includes(letter) || revealWord
+                      ? "visible"
+                      : "hidden",
+                  color:
+                    revealWord && !guessedLetters.includes(letter) ? "salmon" : "",
                 }}
               >
                 {letter}
