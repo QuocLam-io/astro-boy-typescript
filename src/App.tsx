@@ -87,14 +87,14 @@ const App: React.FC = () => {
       if (seconds > 220) {
         setSeconds((prevSeconds) => prevSeconds - 1);
       }
-      console.log(seconds);
+      // console.log(seconds);
     }, 1000);
 
     setTimeout(() => {
       clearInterval(something);
     }, 226000);
   };
-  console.log(seconds);
+  // console.log(seconds);
 
   if (seconds === 0) {
     setSeconds(226);

@@ -22,7 +22,7 @@ const HowToPlay = ({ setHowToPlay, howToPlay }: HowToPlayProps) => {
             onClick={() => {
               setHowToPlay(!howToPlay);
             }}
-            src="../../public/imgs/closeVector.svg"
+            src="/imgs/closeVector.svg"
             alt="close button"
           />
         </div>
