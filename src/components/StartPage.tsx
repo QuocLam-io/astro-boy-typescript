@@ -3,17 +3,21 @@ import React from "react";
 interface StartPageProps {
   getRandomWord: () => void;
   setStartGame: (startGame: boolean) => void;
+  setDiary: (diary: boolean) => void;
+  audio: HTMLAudioElement;
 }
 
 const StartPage: React.FC<StartPageProps> = ({
   getRandomWord,
   setStartGame,
+  setDiary,
+  audio,
 }) => {
   const title = "ASTROBOY";
 
   return (
     <div className="StartPage">
-      <img src="./imgs/planet.svg" alt="cartoon planet" />
+      <img className="planet" src="./imgs/planet.svg" alt="cartoon planet" />
       <div className="word">
         {title.split("").map((letter, index) => {
           return (
@@ -26,9 +30,11 @@ const StartPage: React.FC<StartPageProps> = ({
       </div>
       <div
         onClick={() => {
-          getRandomWord();
+          // getRandomWord();
+          audio.play();
+          setStartGame(false);
         }}
-        className="new-game"
+        className="start-mission"
       >
         START MISSION
       </div>

@@ -12,7 +12,11 @@ const Navbar = ({
   setHowToPlay,
   getRandomWord,
 }: NavbarProps) => {
+
   return (
+
+
+    
     <div className="Navbar">
       <div className="logo">
         <div className="icon">🚀</div>

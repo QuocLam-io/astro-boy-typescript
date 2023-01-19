@@ -8,6 +8,7 @@ type ProgressDisplayProps = {
   getRandomWord: () => void;
   randomWord: string;
   setGuessedLetters: React.Dispatch<React.SetStateAction<string[]>>;
+  audio: HTMLAudioElement;
 };
 
 const ProgressDisplay = ({
@@ -17,7 +18,9 @@ const ProgressDisplay = ({
   getRandomWord,
   randomWord,
   setGuessedLetters,
+  audio,
 }: ProgressDisplayProps) => {
+  //Win Lose Text
   const newGameText: string[] = [
     "WAY TO GO SPACE COWBOY",
     "WELCOME TO THE COLD EMPTINESS OF SPACE",
@@ -28,7 +31,7 @@ const ProgressDisplay = ({
       <div className="counter-displays">
         <div className="time-left">
           <p>Time Left</p>
-          <div className="countdown"></div>
+          <div className="countdown">{}</div>
         </div>
         <div className="errors">
           <p>Errors</p>

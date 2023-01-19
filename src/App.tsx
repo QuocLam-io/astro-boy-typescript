@@ -6,11 +6,17 @@ import StartPage from "./components/StartPage";
 import WordDisplay from "./components/WordDisplay";
 import ProgressDisplay from "./components/ProgressDisplay";
 import HowToPlay from "./components/HowToPlay";
+import Diary from "./components/Diary";
 import axios from "axios";
 
 const App: React.FC = () => {
+  //Modal States
+  const [startGame, setStartGame] = useState<boolean>(true);
+  const [howToPlay, setHowToPlay] = useState<boolean>(false);
+  const [diary, setDiary] = useState(false);
+
   //Random Word States
-  const [randomWord, setRandomWord] = useState<string>("meow");
+  const [randomWord, setRandomWord] = useState<string>("violet");
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   const correctLetters = guessedLetters.filter((letter) =>
     randomWord.includes(letter)
@@ -18,10 +24,6 @@ const App: React.FC = () => {
   const incorrectLetters = guessedLetters.filter(
     (letter) => !randomWord.includes(letter)
   );
-
-  //Modal States
-  const [startGame, setStartGame] = useState<boolean>(true);
-  const [howToPlay, setHowToPlay] = useState<boolean>(false);
 
   //Win Lose Logic
   const isLoser = incorrectLetters.length >= 6;
@@ -37,7 +39,7 @@ const App: React.FC = () => {
       })
       .then((res) => {
         console.log(res.data);
-        let response = res.data.word
+        let response = res.data.word;
         setRandomWord(response.toLowerCase());
         console.log("random word: ", randomWord);
       })
@@ -77,21 +79,27 @@ const App: React.FC = () => {
     };
   }, [guessedLetters]);
 
-  let audio = new Audio("./audio/the_color_violet.mp3");
-
   /* -------------------------------------------------------------------------- */
+  let audio = new Audio("./audio/the_color_violet.mp3");
 
   return (
     <div className="App">
-      {startGame && <StartPage 
-        getRandomWord={getRandomWord}
-        setStartGame={setStartGame} />}
-      {howToPlay && <HowToPlay howToPlay={howToPlay} setHowToPlay={setHowToPlay} />}
+      {startGame && (
+        <StartPage
+          getRandomWord={getRandomWord}
+          setStartGame={setStartGame}
+          setDiary={setDiary}
+          audio={audio}
+        />
+      )}
+      {diary && <Diary diary={diary} setDiary={setDiary} />}
+      {howToPlay && (
+        <HowToPlay howToPlay={howToPlay} setHowToPlay={setHowToPlay} />
+      )}
       <Navbar
         howToPlay={howToPlay}
         setHowToPlay={setHowToPlay}
         getRandomWord={getRandomWord}
-        audio={audio}
       />
       <div className="display">
         <div className="left-display">
@@ -107,6 +115,7 @@ const App: React.FC = () => {
           />
         </div>
         <ProgressDisplay
+          audio={audio}
           incorrectGuesses={incorrectLetters.length}
           isLoser={isLoser}
           isWinner={isWinner}

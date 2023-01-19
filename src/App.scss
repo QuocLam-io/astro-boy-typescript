@@ -69,6 +69,8 @@ a {
 .StartPage {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -77,9 +79,170 @@ a {
   background: url(./imgs/Background.png);
   background-size: 115%;
   background-position: center;
+  gap: 4.4vh;
   // z-index: 3;
   // border: $border;
   transition: all 0.2s ease-in-out;
+
+  .planet {
+    width: 10%;
+  }
+
+  .word {
+    display: flex;
+    justify-content: center;
+    height: 17%;
+    width: 100%;
+    gap: 0.5em;
+    margin-bottom: 6.6vh;
+    // border: $border;
+
+    .letter-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 6.25%;
+      border: 2.06889px solid rgba(255, 255, 255, 0.5);
+
+      .letter {
+        font-size: clamp(2.23vw, 32px, 2vw);
+      }
+    }
+  }
+
+  .start-mission {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(2.5vw, 32px, 2.5vw);
+    color: #0e0326;
+    width: 29%;
+    height: 9.5%;
+    cursor: pointer;
+    color: white;
+    letter-spacing: 0.1em;
+    background: rgba(255, 255, 255, 0.25);
+    transition: all 0.2s ease-in-out;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+
+    &:hover {
+      background: rgba(14, 3, 38, 0.5);
+    }
+  }
+}
+
+//* ---------------------------------- Diary --------------------------------- */
+
+.Diary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(51, 51, 51, 0.6);
+
+  .diary-modal {
+    display: flex;
+    flex-direction: column;
+    height: 88%;
+    width: 93.75%;
+    font-family: $gugi;
+    background: #252c28;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+
+    .diary-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 7.5%;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.1em;
+      border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+
+      div {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 7%;
+
+        gap: 2.5%;
+        padding: 0 1.5%;
+        // border: $border;
+
+        .circle {
+          height: 39%;
+          width: 10%;
+          width: 17px;
+
+          background: transparent;
+          border: 3px solid rgba(255, 255, 255, 0.7);
+          border-radius: 50%;
+        }
+
+        :first-child {
+          cursor: pointer;
+          background: rgba(255, 255, 255, 0.7);
+        }
+      }
+    }
+    .diary-body {
+      display: flex;
+      flex-direction: column;
+      height: 75%;
+      gap: 6.4%;
+      padding: 3% 5%;
+      // border: $border;
+
+      .log-dates {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        line-height: 125%;
+        letter-spacing: 0.1em;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .log-body {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        letter-spacing: 0.08em;
+        color: rgba(105, 250, 36, 0.8);
+        // border: $border;
+
+        :first-child{
+          margin-bottom: 1rem;
+        }
+
+        :last-child{
+          margin-top: 1rem;
+        }
+
+
+      }
+
+    }
+    .start-mission {
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      font-size: clamp(2.5vw, 32px, 2.5vw);
+      color: #0e0326;
+      width: 29%;
+      cursor: pointer;
+      color: white;
+      letter-spacing: 0.1em;
+      background: rgba(255, 255, 255, 0.25);
+      transition: all 0.2s ease-in-out;
+      border: 1.5px solid rgba(255, 255, 255, 0.5);
+
+      &:hover {
+        background: rgba(14, 3, 38, 0.5);
+      }
+    }
+  }
 }
 
 //* --------------------------------- Navbar --------------------------------- */
@@ -357,15 +520,15 @@ a {
 //* ------------------------------- How To Play ------------------------------ */
 
 .HowToPlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
   background: rgba(51, 51, 51, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   #instructions {
     width: 45%;
