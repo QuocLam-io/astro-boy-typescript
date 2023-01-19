@@ -48,6 +48,7 @@ video {
 
 body {
   background: url("./imgs/background.svg");
+  // background-image: url("./imgs/failLose.gif");
   background-size: 115%;
   background-position: center;
 }
@@ -76,7 +77,8 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  background: url("./imgs/background.svg");
+  // background: url("./imgs/background.svg");
+  background-image: url("./imgs/failLose.gif");
   background-size: 115%;
   background-position: center;
   gap: 4.4vh;
