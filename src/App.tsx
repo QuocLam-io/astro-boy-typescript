@@ -80,13 +80,21 @@ const App: React.FC = () => {
 
   const [seconds, setSeconds] = useState(226);
 
-  console.log(seconds);
+  // console.log(seconds);
 
   const startTimer = () => {
     let something = setInterval(() => {
-      setSeconds(seconds - 1);
+      if (seconds > 220) {
+        setSeconds((prevSeconds) => prevSeconds - 1);
+      }
+      console.log(seconds);
     }, 1000);
+
+    setTimeout(() => {
+      clearInterval(something);
+    }, 226000);
   };
+  console.log(seconds);
 
   if (seconds === 0) {
     setSeconds(226);
