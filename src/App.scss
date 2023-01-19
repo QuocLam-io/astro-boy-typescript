@@ -47,7 +47,7 @@ video {
 // }
 
 body {
-  background: url(./imgs/Background.png);
+  background: url("./imgs/Background.png");
   background-size: 115%;
   background-position: center;
 }
@@ -76,7 +76,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  background: url(./imgs/Background.png);
+  background: url("./imgs/Background.png");
   background-size: 115%;
   background-position: center;
   gap: 4.4vh;
