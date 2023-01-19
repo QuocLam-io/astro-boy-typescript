@@ -477,12 +477,13 @@ a {
   }
 
   .winner {
-    background-image: url("./imgs/failWin.gif");
+    background-image: url("../public/imgs/failWin.gif");
     background-size: 200%;
   }
 
   .loser {
-    background-image: url("./imgs/failLose.gif");
+    background-image: url("../public/imgs/failLose.svg");
+
     background-size: 200%;
   }
 
