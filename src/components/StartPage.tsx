@@ -32,10 +32,11 @@ const StartPage: React.FC<StartPageProps> = ({
       </div>
       <div
         onClick={() => {
-          getRandomWord();
+          // getRandomWord();
           startTimer();
           audio.play();
           setStartGame(false);
+          setDiary(true);
         }}
         className="start-mission"
       >
