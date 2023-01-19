@@ -84,6 +84,9 @@ const App: React.FC = () => {
 
     let something = setInterval(() => {
       setSeconds((seconds) => seconds - 1);
+      if (seconds === 220) {
+        clearInterval(something);
+      }
     }, 1000);
   };
   if (seconds === 0) {
