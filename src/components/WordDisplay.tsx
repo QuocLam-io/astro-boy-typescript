@@ -3,9 +3,10 @@ import React from "react";
 type WordDisplayProps = {
   randomWord: string;
   guessedLetters: string[];
+  reveal?: boolean;
 };
 
-const WordDisplay = ({ randomWord, guessedLetters }: WordDisplayProps) => {
+const WordDisplay = ({ randomWord, guessedLetters, reveal }: WordDisplayProps) => {
 
   return (
     <div className="WordDisplay">
