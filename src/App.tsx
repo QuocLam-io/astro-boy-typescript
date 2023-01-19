@@ -11,7 +11,7 @@ import axios from "axios";
 
 const App: React.FC = () => {
   //Modal States
-  const [startGame, setStartGame] = useState<boolean>(false);
+  const [startGame, setStartGame] = useState<boolean>(true);
   const [howToPlay, setHowToPlay] = useState<boolean>(false);
   const [diary, setDiary] = useState(false);
 
@@ -80,18 +80,18 @@ const App: React.FC = () => {
 
   const [seconds, setSeconds] = useState(226);
 
-  const startTimer = () => {
+  console.log(seconds);
 
+  const startTimer = () => {
     let something = setInterval(() => {
-      setSeconds((seconds) => seconds - 1);
-      if (seconds === 220) {
-        clearInterval(something);
-      }
+      setSeconds(seconds - 1);
     }, 1000);
   };
+
   if (seconds === 0) {
     setSeconds(226);
   }
+
   //* -------------------------------------------------------------------------- */
   return (
     <div className="App">
