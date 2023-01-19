@@ -15,11 +15,6 @@ $noto: "Noto Sans", sans-serif;
   font: inherit;
 }
 
-body {
-  color: #ffffff;
-  font-family: $audiowide;
-  min-height: 100vh;
-}
 
 img,
 picture,
@@ -47,8 +42,11 @@ video {
 // }
 
 body {
-  background: url("./imgs/background.svg");
+  color: #ffffff;
+  font-family: $audiowide;
+  min-height: 100vh;
   // background-image: url("./imgs/failLose.gif");
+  background-image: url("../public/imgs/background.svg");
   background-size: 115%;
   background-position: center;
 }
