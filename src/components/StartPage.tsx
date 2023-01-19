@@ -5,6 +5,7 @@ interface StartPageProps {
   setStartGame: (startGame: boolean) => void;
   setDiary: (diary: boolean) => void;
   audio: HTMLAudioElement;
+  startTimer: () => void;
 }
 
 const StartPage: React.FC<StartPageProps> = ({
@@ -12,6 +13,7 @@ const StartPage: React.FC<StartPageProps> = ({
   setStartGame,
   setDiary,
   audio,
+  startTimer,
 }) => {
   const title = "ASTROBOY";
 
@@ -31,6 +33,7 @@ const StartPage: React.FC<StartPageProps> = ({
       <div
         onClick={() => {
           // getRandomWord();
+          startTimer();
           audio.play();
           setStartGame(false);
         }}

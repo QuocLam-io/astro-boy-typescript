@@ -48,10 +48,6 @@ const App: React.FC = () => {
       });
   };
 
-  // console.log("random word: ", randomWord);
-  // console.log("guessed:", guessedLetters)
-  // console.log("wrong:", wrongLetters)
-
   //Event Listeners for physical and virtual Keyboard
   const addGuessedLetter = useCallback(
     //unables adding letter
@@ -79,9 +75,21 @@ const App: React.FC = () => {
     };
   }, [guessedLetters]);
 
-  /* -------------------------------------------------------------------------- */
+  //* ---------------------------------- Audio --------------------------------- */
   let audio = new Audio("./audio/the_color_violet.mp3");
 
+  const [seconds, setSeconds] = useState(226);
+
+  const startTimer = () => {
+
+    let something = setInterval(() => {
+      setSeconds((seconds) => seconds - 1);
+    }, 1000);
+  };
+  if (seconds === 0) {
+    setSeconds(226);
+  }
+  //* -------------------------------------------------------------------------- */
   return (
     <div className="App">
       {startGame && (
@@ -90,6 +98,7 @@ const App: React.FC = () => {
           setStartGame={setStartGame}
           setDiary={setDiary}
           audio={audio}
+          startTimer={startTimer}
         />
       )}
       {diary && <Diary diary={diary} setDiary={setDiary} />}
@@ -115,13 +124,15 @@ const App: React.FC = () => {
           />
         </div>
         <ProgressDisplay
-          audio={audio}
           incorrectGuesses={incorrectLetters.length}
           isLoser={isLoser}
           isWinner={isWinner}
           getRandomWord={getRandomWord}
           randomWord={randomWord}
           setGuessedLetters={setGuessedLetters}
+          startGame={startGame}
+          seconds={seconds}
+          setSeconds={setSeconds}
         />
       </div>
     </div>

@@ -1,24 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 
 type ProgressDisplayProps = {
+  setSeconds: React.Dispatch<React.SetStateAction<number>>;
   incorrectGuesses: number;
   isLoser: boolean;
   isWinner: boolean;
   getRandomWord: () => void;
   randomWord: string;
   setGuessedLetters: React.Dispatch<React.SetStateAction<string[]>>;
-  audio: HTMLAudioElement;
+  startGame: boolean;
+  seconds: number;
 };
 
 const ProgressDisplay = ({
+  startGame,
   incorrectGuesses,
   isLoser,
   isWinner,
   getRandomWord,
   randomWord,
   setGuessedLetters,
-  audio,
+  seconds,
+  setSeconds,
 }: ProgressDisplayProps) => {
   //Win Lose Text
   const newGameText: string[] = [
@@ -26,12 +30,19 @@ const ProgressDisplay = ({
     "WELCOME TO THE COLD EMPTINESS OF SPACE",
   ];
 
+  //Timer
+  let minutes = Math.floor(seconds / 60);
+  let secondsLeft: number | string = seconds % 60;
+  if (secondsLeft < 10) {
+    secondsLeft = `0${secondsLeft}`;
+  }
+
   return (
     <div className="ProgressDisplay">
       <div className="counter-displays">
         <div className="time-left">
           <p>Time Left</p>
-          <div className="countdown">{}</div>
+          <div className="countdown">{minutes}:{secondsLeft} </div>
         </div>
         <div className="errors">
           <p>Errors</p>
@@ -45,6 +56,7 @@ const ProgressDisplay = ({
             onClick={() => {
               getRandomWord();
               setGuessedLetters([]);
+              setSeconds(226);
             }}
             className="new-game"
           >
@@ -60,6 +72,7 @@ const ProgressDisplay = ({
             onClick={() => {
               getRandomWord();
               setGuessedLetters([]);
+              setSeconds(226);
             }}
             className="new-game lose"
           >
