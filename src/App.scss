@@ -3,6 +3,8 @@ $audiowide: "Audiowide", cursive;
 $gugi: "Gugi", cursive;
 $noto: "Noto Sans", sans-serif;
 
+$mobile: 420px;
+
 *,
 *::before,
 *::after {
@@ -14,7 +16,6 @@ $noto: "Noto Sans", sans-serif;
   padding: 0;
   font: inherit;
 }
-
 
 img,
 picture,
@@ -129,6 +130,35 @@ a {
       background: rgba(14, 3, 38, 0.5);
     }
   }
+
+  @media screen and (max-width: $mobile) {
+    background-size: 450%;
+
+    .planet {
+      width: 20%;
+    }
+
+    .word {
+      height: 6.75%;
+      // border: $border;
+
+      .letter-box {
+        width: 10%;
+        border: 0.688906px solid rgba(255, 255, 255, 0.5);
+
+        .letter {
+          font-size: 1.5rem;
+          line-height: 125%;
+        }
+      }
+    }
+
+    .start-mission {
+      width: 73%;
+      height: 7%;
+      font-size: 1.5rem;
+    }
+  }
 }
 
 //* ---------------------------------- Diary --------------------------------- */
@@ -212,17 +242,14 @@ a {
         color: rgba(105, 250, 36, 0.8);
         // border: $border;
 
-        :first-child{
+        :first-child {
           margin-bottom: 1rem;
         }
 
-        :last-child{
+        :last-child {
           margin-top: 1rem;
         }
-
-
       }
-
     }
     .start-mission {
       display: flex;
