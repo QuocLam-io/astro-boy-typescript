@@ -94,9 +94,14 @@ a {
     justify-content: center;
     height: 17%;
     width: 100%;
-    gap: 0.5em;
+    // gap: 0.4em;
+    gap: .8%;
     margin-bottom: 6.6vh;
     // border: $border;
+
+    :nth-child(5){
+      margin-right: 1%;
+    }
 
     .letter-box {
       display: flex;
