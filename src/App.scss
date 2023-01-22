@@ -228,6 +228,11 @@ a {
           cursor: pointer;
           background: rgba(255, 255, 255, 0.7);
         }
+
+
+        @media screen and (max-width: $mobile) {
+          width: 100%;
+        }
       }
     }
     .diary-body {
