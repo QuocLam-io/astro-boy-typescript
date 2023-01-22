@@ -273,7 +273,6 @@ a {
           @media screen and (max-width: $mobile) {
             margin-bottom: 0;
           }
-
         }
 
         :last-child {
@@ -660,5 +659,13 @@ a {
         letter-spacing: 0.1em;
       }
     }
+
+    @media screen and (max-width: $mobile) {
+      height: auto;
+      width: 80%;
+    }
+  }
+  @media screen and (max-width: $mobile) {
+    height: 100%;
   }
 }
