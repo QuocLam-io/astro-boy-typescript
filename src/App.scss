@@ -204,6 +204,10 @@ a {
       letter-spacing: 0.1em;
       border-bottom: 3px solid rgba(255, 255, 255, 0.5);
 
+      @media screen and (max-width: $mobile) {
+        justify-content: center;
+      }
+
       div {
         display: flex;
         align-items: center;
@@ -231,7 +235,7 @@ a {
 
 
         @media screen and (max-width: $mobile) {
-          width: 100%;
+          display: none;
         }
       }
     }
