@@ -233,7 +233,6 @@ a {
           background: rgba(255, 255, 255, 0.7);
         }
 
-
         @media screen and (max-width: $mobile) {
           display: none;
         }
@@ -272,6 +271,11 @@ a {
           margin-top: 1rem;
         }
       }
+
+      @media screen and (max-width: $mobile) {
+        height: auto;
+        gap: 2vh;
+      }
     }
     .start-mission {
       display: flex;
@@ -292,8 +296,6 @@ a {
       }
 
       @media screen and (max-width: $mobile) {
-        align-self: flex-end;
-        margin-right: 5%;
       }
     }
   }
