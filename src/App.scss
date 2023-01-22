@@ -296,6 +296,8 @@ a {
       }
 
       @media screen and (max-width: $mobile) {
+        height: 5%;
+        align-items: center;
       }
     }
   }
