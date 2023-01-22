@@ -51,11 +51,6 @@ body {
   background-size: 115%;
   background-position: center;
 
-  @media screen and (max-width: $mobile) {
-    height: 100%;
-  
-    
-  }
 }
 
 .App {
@@ -63,6 +58,10 @@ body {
   flex-direction: column;
   height: 100vh;
   // width: 100%;
+
+  @media screen and (max-width: $mobile) {
+    height: 100%;
+  }
 }
 
 a {
