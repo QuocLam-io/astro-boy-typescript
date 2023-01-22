@@ -55,7 +55,7 @@ body {
 .App {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 95vh;
   // width: 100%;
 
   @media screen and (max-width: $mobile) {
@@ -356,7 +356,7 @@ a {
   }
 
   @media screen and (max-width: $mobile) {
-    height: 5vh;
+    // height: 5vh;
   }
 }
 
@@ -364,7 +364,7 @@ a {
 
 .display {
   display: flex;
-  height: 85vh;
+  height: 91vh;
   // border: $border;
 
   .left-display {
