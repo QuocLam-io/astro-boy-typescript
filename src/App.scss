@@ -145,6 +145,7 @@ a {
   @media screen and (max-width: $mobile) {
     height: 100%;
     background-size: 450%;
+    // background: radial-gradient(50% 50% at 50% 50%, #3C3252 0%, #0E0326 100%);
 
     .planet {
       width: 20%;

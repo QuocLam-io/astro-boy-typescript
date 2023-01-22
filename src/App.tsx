@@ -12,8 +12,8 @@ import axios from "axios";
 const App: React.FC = () => {
   //Modal States
   const [startGame, setStartGame] = useState<boolean>(false);
-  const [howToPlay, setHowToPlay] = useState<boolean>(true);
-  const [diary, setDiary] = useState(false);
+  const [howToPlay, setHowToPlay] = useState<boolean>(false);
+  const [diary, setDiary] = useState(true);
 
   //Random Word States
   const [randomWord, setRandomWord] = useState<string>("violet");
