@@ -354,13 +354,17 @@ a {
     cursor: pointer;
     transition: all 0.2s ease-in-out;
   }
+
+  @media screen and (max-width: $mobile) {
+    height: 9%;
+  }
 }
 
 //* --------------------------------- Display -------------------------------- */
 
 .display {
   display: flex;
-  height: 92vh;
+  height: 91vh;
   // border: $border;
 
   .left-display {
@@ -368,6 +372,10 @@ a {
     flex-direction: column;
     width: 75%;
     border-right: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  @media screen and (max-width: $mobile) {
+    height: 92%;
   }
 }
 
