@@ -315,7 +315,7 @@ a {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 9vh;
+  height: 9%;
   padding: 0.9375% 3.75%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 
@@ -328,7 +328,7 @@ a {
     > * {
       display: flex;
       align-items: center;
-      font-size: clamp(1.67vw, 24px, 1.67vw);
+      font-size: clamp(20px, 2vw, 2.4vw);
     }
 
     .icon {
@@ -343,14 +343,18 @@ a {
     justify-content: center;
     width: 14%;
     background: transparent;
-    font-size: clamp(1.4vw, 20px, 1.4vw);
+    font-size: clamp(14px, 1.4vw, 1.4vw);
     border: none;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    border: $border;
+
   }
 
   @media screen and (max-width: $mobile) {
-    // height: 5vh;
+    .how-to-play-btn{
+      width: 30%;
+    }
   }
 }
 
