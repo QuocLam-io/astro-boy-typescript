@@ -432,9 +432,8 @@ a {
   }
 
   @media screen and (max-width: $mobile) {
-
     padding: 10.5% 0;
-    p{ 
+    p {
       align-self: center;
     }
 
@@ -442,7 +441,7 @@ a {
       width: 100%;
       // border: $border;
 
-      .letter-box{
+      .letter-box {
         width: 15%;
       }
     }
@@ -515,6 +514,22 @@ a {
     background: rgba(255, 255, 255, 0.5);
     border: 1.5px solid rgba(255, 255, 255, 0.25);
     cursor: auto;
+  }
+
+  @media screen and (max-width: $mobile) {
+      // border: $border;
+
+
+    .keyboard-row {
+      height: 20%;
+      gap: .5rem;
+      // border: $border;
+
+      .key {
+        width: 8%;
+        font-size: clamp(18px, 2.5vw, 2.5vw);
+      }
+    }
   }
 }
 
