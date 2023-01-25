@@ -594,18 +594,19 @@ a {
     background-repeat: no-repeat;
     p {
       text-align: center;
-      font-size: clamp(2vw, 24px, 2vw);
+      font-size: clamp(24px, 2vw, 2vw);
     }
   }
 
   .winner {
     background-image: url("../public/imgs/failWin.gif");
     background-size: 200%;
+
+
   }
 
   .loser {
     background-image: url("../public/imgs/failLose.gif");
-
     background-size: 200%;
   }
 
@@ -619,7 +620,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: clamp(1.4vw, 20px, 1.4vw);
+    font-size: clamp(20px, 1.4vw, 1.4vw);
     color: #0e0326;
     width: 62%;
     height: 9.5%;
@@ -659,6 +660,24 @@ a {
     .rocket {
       width: 25%;
       // border: $border;
+    }
+
+    .winner {
+      position: absolute;
+      width: 100vw;
+      height: 77.8vh;
+      background-position: top;
+      background-size: 226%;
+      // border: 2px solid white;
+    }
+
+    .lose {
+      position: absolute;
+      width: 100vw;
+      height: 77.8vh;
+      background-position: top;
+      background-size: 226%;
+      // border: 2px solid white;
     }
   }
 }
