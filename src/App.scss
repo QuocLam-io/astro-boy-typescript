@@ -607,6 +607,7 @@ a {
       rgba(255, 255, 255, 0.25) 100%
     );
     flex-direction: row;
+    justify-content: space-around;
     width: 100%;
     height: 20%;
 
@@ -617,8 +618,8 @@ a {
     }
 
     .rocket {
-      width: 35%;
-      border: $border;
+      width: 25%;
+      // border: $border;
     }
   }
 }
