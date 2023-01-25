@@ -16,7 +16,7 @@ const App: React.FC = () => {
   const [diary, setDiary] = useState(false);
 
   //Random Word States
-  const [randomWord, setRandomWord] = useState<string>("violet");
+  const [randomWord, setRandomWord] = useState<string>("stranger");
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   const correctLetters = guessedLetters.filter((letter) =>
     randomWord.includes(letter)

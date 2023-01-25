@@ -407,7 +407,8 @@ a {
 
   p {
     line-height: 125%;
-    font-size: clamp(2.23vw, 32px, 2vw);
+    // font-size: clamp(2.23vw, 32px, 2vw);
+    font-size: clamp(18px, 2vw, 2vw);
   }
 
   .word {
@@ -425,7 +426,24 @@ a {
       border: 2.06889px solid rgba(255, 255, 255, 0.5);
 
       .letter {
-        font-size: clamp(2.23vw, 32px, 2vw);
+        font-size: clamp(28px, 2vw, 2vw);
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+
+    padding: 10.5% 0;
+    p{ 
+      align-self: center;
+    }
+
+    .word {
+      width: 100%;
+      // border: $border;
+
+      .letter-box{
+        width: 15%;
       }
     }
   }
