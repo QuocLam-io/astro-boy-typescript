@@ -601,8 +601,6 @@ a {
   .winner {
     background-image: url("../public/imgs/failWin.gif");
     background-size: 200%;
-
-
   }
 
   .loser {
@@ -671,7 +669,7 @@ a {
       // border: 2px solid white;
     }
 
-    .lose {
+    .loser {
       position: absolute;
       width: 100vw;
       height: 77.8vh;
