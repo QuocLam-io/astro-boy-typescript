@@ -710,12 +710,12 @@ a {
       // border: $border;
 
       h1 {
-        font-size: clamp(24px, 1.5vw, 2vw);
+        font-size: clamp(24px, 2vw, 2.4vw);
         letter-spacing: 0.1em;
         line-height: 125%;
       }
       img {
-        height: 1.5vw;
+        height: clamp(16px, 1.5vw, 1.5vw);
         cursor: pointer;
         // border: $border;
       }
