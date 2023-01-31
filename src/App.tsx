@@ -38,10 +38,8 @@ const App: React.FC = () => {
         headers: { "X-Api-Key": import.meta.env.VITE_API_KEY },
       })
       .then((res) => {
-        console.log(res.data);
         let response = res.data.word;
         setRandomWord(response.toLowerCase());
-        console.log("random word: ", randomWord);
       })
       .catch((error) => {
         console.log(error);
