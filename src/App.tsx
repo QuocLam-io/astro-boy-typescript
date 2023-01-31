@@ -35,7 +35,7 @@ const App: React.FC = () => {
   const getRandomWord = () => {
     axios
       .get(`https://api.api-ninjas.com/v1/randomword`, {
-        headers: { "X-Api-Key": "stcD1E9lKA6Fx395OTMigw==CFDom3PSmx2m5AAW" },
+        headers: { "X-Api-Key": import.meta.env.VITE_API_KEY },
       })
       .then((res) => {
         console.log(res.data);
