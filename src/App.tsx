@@ -33,7 +33,6 @@ const App: React.FC = () => {
 
   //Calls API for a random word
   //TODO: set word to character length of 5-10
-  //TODO: mission button to white
   const getRandomWord = () => {
     axios
       .get(`https://api.api-ninjas.com/v1/randomword`, {
