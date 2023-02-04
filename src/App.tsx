@@ -97,6 +97,7 @@ const App: React.FC = () => {
 
   if (seconds === 0) {
     setSeconds(226);
+    //lose gif logic when timer runs out
     if (isWinner === false){
     setGuessedLetters([...guessedLetters, " ", " ", " ", " ", " ", " "]);
     }
