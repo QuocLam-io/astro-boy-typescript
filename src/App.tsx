@@ -98,6 +98,7 @@ const App: React.FC = () => {
 
   if (seconds === 0) {
     setSeconds(226);
+    setGuessedLetters([...guessedLetters, " ", " ", " ", " ", " ", " "]);
   }
 
   //* -------------------------------------------------------------------------- */
