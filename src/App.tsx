@@ -97,7 +97,9 @@ const App: React.FC = () => {
 
   if (seconds === 0) {
     setSeconds(226);
+    if (isWinner === false){
     setGuessedLetters([...guessedLetters, " ", " ", " ", " ", " ", " "]);
+    }
   }
 
   //* -------------------------------------------------------------------------- */
