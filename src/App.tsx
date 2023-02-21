@@ -32,15 +32,21 @@ const App: React.FC = () => {
     .every((letter) => correctLetters.includes(letter));
 
   //Calls API for a random word
-  //TODO: set word to character length of 5-10
   const getRandomWord = () => {
     axios
       .get(`https://api.api-ninjas.com/v1/randomword`, {
         headers: { "X-Api-Key": import.meta.env.VITE_API_KEY },
       })
       .then((res) => {
-        let response = res.data.word;
-        setRandomWord(response.toLowerCase());
+
+        if (res.data.word.length > 10) {
+          getRandomWord();
+        } else {
+          setRandomWord(res.data.word.toLowerCase());
+        }
+
+        // let response = res.data.word;
+        // setRandomWord(response.toLowerCase());
       })
       .catch((error) => {
         console.log(error);
